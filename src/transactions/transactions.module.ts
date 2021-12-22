@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
+import { GroupsModule } from 'src/groups/groups.module';
 import {
   Transactions,
   TransactionsSchema,
@@ -15,6 +16,6 @@ import { TransactionsService } from './transactions.service';
   ],
   controllers: [TransactionsController],
   providers: [TransactionsService],
-  exports: [TransactionsService]
+  exports: [TransactionsService],
 })
 export class TransactionsModule {}

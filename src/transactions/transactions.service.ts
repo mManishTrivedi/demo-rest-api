@@ -17,4 +17,8 @@ export class TransactionsService {
     const txn = new this.model(createDto);
     return await txn.save();
   }
+
+  async findAll(condition: any): Promise<Transactions[]> {
+    return this.model.find(condition).exec();
+  }
 }
