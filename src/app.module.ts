@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GroupsModule } from './groups/groups.module';
 import { ExpensesModule } from './expenses/expenses.module';
+import { TransactionsModule } from './transactions/transactions.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { ExpensesModule } from './expenses/expenses.module';
     ),
     GroupsModule,
     ExpensesModule,
+    TransactionsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
