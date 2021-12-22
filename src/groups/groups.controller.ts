@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Put, Param } from '@nestjs/common';
 import { GroupsService } from './groups.service';
 import { GroupsCreateDto } from './dto/groups.dto';
 
@@ -8,9 +8,15 @@ export class GroupsController {
 
   @Post()
   async create(@Body() groupsCreateDto: GroupsCreateDto) {
-    let a:any;
-    a = groupsCreateDto;
-    a._id = 'manishs';
-    await this.groupsService.create(a);
+    return await this.groupsService.create(groupsCreateDto);
+  }
+
+  @Put('/:groupId')
+  async update(
+    @Param('groupId') groupId: string,
+    @Body() groupsCreateDto: GroupsCreateDto,
+  ) {
+    //TODO: Update call by created user only
+    return await this.groupsService.update(groupId, groupsCreateDto);
   }
 }

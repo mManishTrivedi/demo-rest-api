@@ -15,6 +15,10 @@ export class GroupsService {
     return createdGroups.save();
   }
 
+  async update(_id: string, createGroupsDto: GroupsCreateDto): Promise<Groups> {
+    return await this.groupsModel.findOneAndUpdate({ _id }, createGroupsDto);
+  }
+
   async findAll(): Promise<Groups[]> {
     return this.groupsModel.find().exec();
   }
