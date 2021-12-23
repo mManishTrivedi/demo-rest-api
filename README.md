@@ -12,3 +12,4 @@ $ yarn
 $ yarn start:dev
 
 ```
+- Server run on localhost:3000
